@@ -1,24 +1,15 @@
 #pragma once
-
 #include "Engine/GameEngine.h"
-
-class Ship : public GameObject
+class Laser : public GameObject
 {
 public:
-
-	Ship();
+	Laser(sf::Vector2f pos);
 	void draw();
 	void update(sf::Time& elapsed);
-
 private:
 	sf::Sprite sprite_;
-	int fireTimer_ = 0;
-
 };
-typedef std::shared_ptr<Ship> ShipPtr;
-
-	
-
+typedef std::share_ptr<Laser> LaserPtr;
 
 
 

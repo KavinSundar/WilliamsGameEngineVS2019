@@ -1,4 +1,26 @@
 #include "Ship.h"
+const float SPEED = 0.3f;
+const int FIRE_DELAY = 200;
+
+void Ship::update(sf::Time& elapsed) {
+	sf::Vector2f pos = sprite_.getPosition();
+	float x = pos.x;
+	float y = pos.y;
+	int msElapsed = elapsed.asMilliseconds();
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))	y -= SPEED * msElapsed;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))	y += SPEED * msElapsed;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))	y -= SPEED * msElapsed;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))	y += SPEED * msElapsed;
+	sprite_.setPosition(sf::Vector2f(x, y));
+	if (fireTimer_ > 0) {
+		fireTimer_ -= FIRE_DELAY;
+		sf::FloatRect bounds = sprite_.getGlobalBounds();
+		float laserX = x + bounds.width;
+		float laserY = y + (bounds.height / 2.0f);
+		LaserPtr laser = std::make_shared<Laser>(sf::Vector2f(laserX, laserY));
+		GAME.getCurrentScene().addGameObject(laser);
+	}
+}
 
 Ship::Ship()
 {

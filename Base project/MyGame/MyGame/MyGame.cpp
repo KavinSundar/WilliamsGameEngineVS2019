@@ -21,11 +21,16 @@ class GameObject
 
 		bool isDead();
 		void makeDead();
+
 		virtual void update(sf::Time& elasped) {}
+
 		virtual void draw(){}
+
 		bool isCollisionCheckEnabled();
 		void setCollisionCheckEnabled(bool isCollisionCheckEnabled);
+
 		virtual sf::FloatRect getCollisionRect() { return sf::FloatRect(); }
+
 		virtual void handleEvent (sf::Event& event){}
 
 	private:
