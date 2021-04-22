@@ -9,7 +9,7 @@ public:
 private:
 	sf::Sprite sprite_;
 };
-typedef std::share_ptr<Laser> LaserPtr;
+typedef std::shared_ptr<Laser> LaserPtr;
 
 
 
