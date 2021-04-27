@@ -17,3 +17,4 @@ private:
 
 typedef std::shared_ptr<Meteor> MeteorPtr;
 
+	
