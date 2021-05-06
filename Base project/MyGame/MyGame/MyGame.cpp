@@ -19,7 +19,7 @@ int main()
 {
 	// Seed the random number generator.
 	srand((int)time(NULL));
-
+	
 	// Initialize the game.
 	GAME.initialize(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE);
 
