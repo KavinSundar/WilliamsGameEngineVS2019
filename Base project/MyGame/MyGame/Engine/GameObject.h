@@ -43,7 +43,7 @@ private:
 	std::set<std::string> tags_;
 
 	bool isDead_ = false;
-	bool isCollisionCheckEnabled_ = false;
+	bool isCollisionCheckEnabled_ = true;
 };
 
 typedef std::shared_ptr<GameObject> GameObjectPtr;
