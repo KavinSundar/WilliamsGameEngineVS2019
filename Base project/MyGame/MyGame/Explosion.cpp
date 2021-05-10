@@ -30,6 +30,6 @@ void Explosion::update(sf::Time & elapsed)
 	if (!isPlaying())
 	{
 		makeDead();
-
+		
 	}
 }
