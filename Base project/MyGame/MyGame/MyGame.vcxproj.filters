@@ -76,6 +76,9 @@
     <Image Include="Resources\explosion-spritesheet.png">
       <Filter>Resources</Filter>
     </Image>
+    <Image Include="Resources\meteor2.png">
+      <Filter>Resources</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Media Include="Resources\boom.wav">

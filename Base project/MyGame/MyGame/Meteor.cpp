@@ -3,14 +3,18 @@
 #include "GameScene.h"
 #include "Score.h"
 
+
 const float SPEED = 0.25f;
 
 Meteor::Meteor(sf::Vector2f pos)
 {
 	sprite_.setTexture(GAME.getTexture("Resources/meteor.png"));
 	sprite_.setPosition(pos);
+	sprite2_.setTexture(GAME.getTexture("Resources/meteor2.png"));
+	sprite2_.setPosition(pos);
 	assignTag("meteor");
-
+	assignTag("meteor2");
+	bool gold = false;;
 }
 void Meteor::draw()
 {
@@ -19,8 +23,17 @@ void Meteor::draw()
 
 void Meteor::update(sf::Time& elapsed)
 {
+	int g = rand() % 7;
+
+	if (g == 0) {
+		bool gold = true;
+	}
+	
+
 	int msElapsed = elapsed.asMilliseconds();
 	sf::Vector2f pos = sprite_.getPosition();
+
+
 
 	if (pos.x < sprite_.getGlobalBounds().width * -1)
 	{
