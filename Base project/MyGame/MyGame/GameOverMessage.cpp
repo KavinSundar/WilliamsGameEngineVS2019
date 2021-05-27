@@ -11,6 +11,7 @@ GameOverMessage::GameOverMessage(int score)
 	std::stringstream stream;
 	stream << "Game Over \n\nYour Score: " << score << "\n\nPress Enter To Continue";
 	text_.setString(stream.str());
+	
 }
 void GameOverMessage::draw() {
 	GAME.getRenderWindow().draw(text_);

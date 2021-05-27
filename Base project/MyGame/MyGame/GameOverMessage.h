@@ -10,5 +10,6 @@ public:
 	void update(sf::Time& elapsed);
 private:
 	sf::Text text_;
+	
 };
 typedef std::shared_ptr < GameOverMessage > GameOverMessagePtr;

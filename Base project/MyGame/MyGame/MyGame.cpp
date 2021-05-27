@@ -26,7 +26,7 @@ int main()
 	// Create our scene.
 	GameScenePtr scene = std::make_shared<GameScene>();
 	GAME.setScene(scene);
-
+	
 	// Run the game loop.
 	GAME.run();
 
