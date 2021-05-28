@@ -14,6 +14,7 @@ public:
 private:
 	sf::Sprite sprite_;
 	sf::Sprite sprite2_;
+	sf::Sound punch;
 };
 
 typedef std::shared_ptr<Meteor> MeteorPtr;

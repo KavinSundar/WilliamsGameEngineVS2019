@@ -38,6 +38,8 @@ void Meteor::update(sf::Time& elapsed)
 	if (pos.x < sprite_.getGlobalBounds().width * -1)
 	{
 		GameScene& scene = (GameScene&)GAME.getCurrentScene();
+		punch.setBuffer(GAME.getSoundBuffer("Resources/Punch1.wav"));
+		punch.play();
 		scene.decreaseLives();
 		makeDead();
 		

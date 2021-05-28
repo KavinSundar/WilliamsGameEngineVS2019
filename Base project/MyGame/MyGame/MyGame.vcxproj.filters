@@ -90,6 +90,12 @@
     <Media Include="Resources\SONG 2.wav">
       <Filter>Resources</Filter>
     </Media>
+    <Media Include="Resources\Punch1.wav">
+      <Filter>Resources</Filter>
+    </Media>
+    <Media Include="Resources\Ouch Sound Effect.wav">
+      <Filter>Resources</Filter>
+    </Media>
   </ItemGroup>
   <ItemGroup>
     <Font Include="Resources\Courneuf-Regular.ttf">

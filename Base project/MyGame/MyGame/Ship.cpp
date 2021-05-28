@@ -14,7 +14,7 @@ void Ship::update(sf::Time& elapsed) {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))	y -= SPEED * msElapsed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))	y += SPEED * msElapsed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))	y -= SPEED * msElapsed;
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))	y += SPEED * msElapsed;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))y += SPEED * msElapsed;
 	sprite_.setPosition(sf::Vector2f(x, y));
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && fireTimer_ <= 0) {
@@ -25,16 +25,12 @@ void Ship::update(sf::Time& elapsed) {
 		GAME.getCurrentScene().addGameObject(laser);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::M) && fireTimer_ <= 0) {
-		int random_number = rand() % 2;
-		if (random_number == 1) {
-			song2.setBuffer(GAME.getSoundBuffer("Resources/SONG 2.wav"));
-			song2.play();
-		}
-		else {
-			song_.setBuffer(GAME.getSoundBuffer("Resources/Song 1.wav"));
-			song_.play();
-
-		}
+		song2.setBuffer(GAME.getSoundBuffer("Resources/SONG 2.wav"));
+		song2.play();
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::N) && fireTimer_ <= 0) {
+		song_.setBuffer(GAME.getSoundBuffer("Resources/Song 1.wav"));
+		song_.play();
 	}
 }
 
