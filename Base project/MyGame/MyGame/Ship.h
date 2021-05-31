@@ -15,6 +15,8 @@ private:
 	int fireTimer_ = 0;
 	sf::Sound song2;
 	sf::Sound song_;
+	sf::Sound song;
+	sf::Sound teleportnoise;
 };
 typedef std::shared_ptr<Ship> ShipPtr;
 

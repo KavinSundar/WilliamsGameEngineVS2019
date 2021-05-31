@@ -125,6 +125,7 @@
   </ItemGroup>
   <ItemGroup>
     <Media Include="Resources\boom.wav" />
+    <Media Include="Resources\Moon Song.wav" />
     <Media Include="Resources\Ouch Sound Effect.wav" />
     <Media Include="Resources\Punch1.wav" />
     <Media Include="Resources\Song 1.wav" />

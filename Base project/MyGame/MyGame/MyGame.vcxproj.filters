@@ -96,6 +96,9 @@
     <Media Include="Resources\Ouch Sound Effect.wav">
       <Filter>Resources</Filter>
     </Media>
+    <Media Include="Resources\Moon Song.wav">
+      <Filter>Resources</Filter>
+    </Media>
   </ItemGroup>
   <ItemGroup>
     <Font Include="Resources\Courneuf-Regular.ttf">

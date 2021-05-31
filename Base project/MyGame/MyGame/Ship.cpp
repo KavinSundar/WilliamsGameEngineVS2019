@@ -5,16 +5,28 @@
 #include <iterator>
 const float SPEED = 0.3f;
 const int FIRE_DELAY = 200;
-
+const int TELE = 1;
 void Ship::update(sf::Time& elapsed) {
 	sf::Vector2f pos = sprite_.getPosition();
 	float x = pos.x;
 	float y = pos.y;
 	int msElapsed = elapsed.asMilliseconds();
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))	y -= SPEED * msElapsed;
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))	y += SPEED * msElapsed;
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))	y -= SPEED * msElapsed;
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))y += SPEED * msElapsed;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))	y -= SPEED * msElapsed;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))	y += SPEED * msElapsed;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))	y -= SPEED * msElapsed;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))	y += SPEED * msElapsed;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))	x += TELE * msElapsed;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))	x -= TELE * msElapsed;
+
+
+	int random_numberX = rand() % 50;
+	int random_numberY = rand() % 40;
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))	x = random_numberX * msElapsed;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))	y = random_numberY * msElapsed;
+	
+	
+
 	sprite_.setPosition(sf::Vector2f(x, y));
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && fireTimer_ <= 0) {
@@ -32,6 +44,16 @@ void Ship::update(sf::Time& elapsed) {
 		song_.setBuffer(GAME.getSoundBuffer("Resources/Song 1.wav"));
 		song_.play();
 	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::B) && fireTimer_ <= 0) {
+		song.setBuffer(GAME.getSoundBuffer("Resources/Moon Song.wav"));
+		song.play();
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F) && fireTimer_ <= 0) {
+		teleportnoise.setBuffer(GAME.getSoundBuffer("Resources/Punch1.wav"));
+		teleportnoise.play();
+	}
+	
+
 }
 
 Ship::Ship()
