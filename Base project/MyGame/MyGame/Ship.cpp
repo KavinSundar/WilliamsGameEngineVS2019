@@ -17,11 +17,15 @@ void Ship::update(sf::Time& elapsed) {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))	y += SPEED * msElapsed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))	x += TELE * msElapsed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))	x -= TELE * msElapsed;
-
+	if (x < 0) x = 800;
+	if (x > 800) x = 0;
+	if (y < 0) y = 600;
+	if (y > 600) y = 0;
 
 	int random_numberX = rand() % 50;
 	int random_numberY = rand() % 40;
-
+	//const int WINDOW_WIDTH = 800;
+	//const int WINDOW_HEIGHT = 600;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))	x = random_numberX * msElapsed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))	y = random_numberY * msElapsed;
 	
@@ -48,7 +52,7 @@ void Ship::update(sf::Time& elapsed) {
 		song.setBuffer(GAME.getSoundBuffer("Resources/Moon Song.wav"));
 		song.play();
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F) && fireTimer_ <= 0) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F)) {
 		teleportnoise.setBuffer(GAME.getSoundBuffer("Resources/Punch1.wav"));
 		teleportnoise.play();
 	}
