@@ -24,11 +24,19 @@ int GameScene::getScore()
 void GameScene::increaseScore()
 {
 	++score_;
+
 }
 int GameScene::getLives() {
+	if (score_ == 10) {
+
+		++lives_;
+
+	}
+	
 	return lives_;
 
 }
+
 void GameScene::decreaseLives() {
 	--lives_;
 

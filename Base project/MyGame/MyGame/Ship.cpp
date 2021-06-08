@@ -29,8 +29,6 @@ void Ship::update(sf::Time& elapsed) {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))	x = random_numberX * msElapsed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))	y = random_numberY * msElapsed;
 	
-	
-
 	sprite_.setPosition(sf::Vector2f(x, y));
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && fireTimer_ <= 0) {
